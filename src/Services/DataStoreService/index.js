@@ -1,15 +1,19 @@
-const DataStore = require('./DataStore')
+const DataStore = require('./DataStore');
+const objects = require('./objects')
 
-let Service = {}
+let Service = {};
+Service.Objects = objects;
 
-Service.RegisterUniverse = function(universe) {
-    Service.universe = universe
-    return Service
+Service.RegisterUniverse = function(universe = undefined) {
+    Service.universe = universe;
+    return Service;
 }
 
 
 Service.GetDataStore = function(store) {
-    return new DataStore(store, Service.universe || global.__OpenCloud.UniverseID)
+    const DataStoreReturned = new DataStore(store, this.universe || global.__OpenCloud.UniverseID);
+    if (this.universe) delete this.universe;
+    return DataStoreReturned;
 }
 
 /** 
@@ -19,12 +23,12 @@ Service.GetDataStore = function(store) {
  * @param  {string} [prefix]
  * @param  {number} [pageSize]
  */
-Service.ListDataStoresAsync = function(prefix, pageSize) {
-    prefix + 'a'
+// Service.ListDataStoresAsync = function(prefix, pageSize) {
+//     prefix + 'a'
 
-}
-
-
+// }
 
 
-module.exports = Service
+
+
+module.exports = Service;

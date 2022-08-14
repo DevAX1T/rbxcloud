@@ -2,8 +2,9 @@ const axios = require('axios').default
 
 let Service = {}
 Service.RegisterUniverse = function(universe) {
-    Service.universe = universe
-    return Service
+    let serviceCopy = Object.assign({}, this)
+    serviceCopy.universe = universe
+    return serviceCopy
 }
 
 Service.PublishAsync = function(topic, message) {
@@ -21,10 +22,10 @@ Service.PublishAsync = function(topic, message) {
         if (message.length > 1024) {
             reject(new Error('Message must be under 1kb in size'))
         }
-        const UniverseId = Service.universe || global.__OpenCloud.UniverseID
+        const UniverseId = this.universe || global.__OpenCloud.UniverseID
         const url = new URL(`https://apis.roblox.com/messaging-service/v1/universes/${UniverseId}/topics/${topic}`)
 
-        axios.post(url.toString(),  {message}, {
+        axios.post(url.toString(), { message }, {
             headers: {'x-api-key': global.__OpenCloud.MessagingService},
             'Content-Type': 'application/json'
         }).then((res) => {

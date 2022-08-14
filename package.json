@@ -7,7 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "DevAX1T",
-  "license": "MIT",
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevAX1T/rbxcloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DevAX1T/rbxcloud/issues"
+  },
+  "homepage": "https://github.com/DevAX1T/rbxcloud#readme",
   "dependencies": {
     "axios": "^0.27.2"
   }
