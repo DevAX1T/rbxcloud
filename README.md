@@ -23,6 +23,8 @@ npm install rbxcloud
 
 ## Example Usage
 
+You can find working examples in `example/general-usage.js` or just read below:
+
 Publish a message using MessagingService:
 ```js
 const { OpenCloud, MessagingService } = require('rbxcloud');
