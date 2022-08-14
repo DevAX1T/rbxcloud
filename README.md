@@ -33,11 +33,11 @@ OpenCloud.Configure({
     UniverseId: 0, // You can get the UniverseId from the Asset explorer
 });
 
-MessagingService.PublishAsync('MyTopic', 'Hello World!').then((result) => {
-    console.log(result);
+MessagingService.PublishAsync('MyTopic', 'Hello World!').then(() => {
+    console.log('Publish was a success!');
 }).catch(err => {
     console.log(err);
-})
+});
 ```
 Read, set, and update DataStore entry:
 ```js
