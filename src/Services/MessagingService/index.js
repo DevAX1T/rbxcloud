@@ -22,7 +22,7 @@ Service.PublishAsync = function(topic, message) {
         if (message.length > 1024) {
             reject(new Error('Message must be under 1kb in size'))
         }
-        const UniverseId = this.universe || global.__OpenCloud.UniverseID
+        const UniverseId = this.universe || global.__OpenCloud.UniverseId
         const url = new URL(`https://apis.roblox.com/messaging-service/v1/universes/${UniverseId}/topics/${topic}`)
 
         axios.post(url.toString(), { message }, {
