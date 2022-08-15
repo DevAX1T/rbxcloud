@@ -1,6 +1,6 @@
 {
   "name": "rbxcloud",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A module to help with Roblox Open Cloud endpoints.",
   "main": "src/index.js",
   "scripts": {
