@@ -1,6 +1,5 @@
 const DataStore = require('./DataStore');
 const objects = require('./objects');
-const DataStoreOptions = objects.DataStoreOptions;
 
 let Service = {};
 Service.Objects = objects;
