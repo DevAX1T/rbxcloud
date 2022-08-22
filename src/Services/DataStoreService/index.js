@@ -15,8 +15,8 @@ Service.RegisterUniverse = function(universe = undefined) {
  * @param  {string} name
  * @returns {DataStore}
  */
-Service.GetDataStore = function(name, scope, options) {
-    const DataStoreReturned = new DataStore(store, this.universe || global.__OpenCloud.UniverseId);
+Service.GetDataStore = function(name) {
+    const DataStoreReturned = new DataStore(name, this.universe || global.__OpenCloud.UniverseId);
     if (this.universe) delete this.universe;
     return DataStoreReturned;
 }
