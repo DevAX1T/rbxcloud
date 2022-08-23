@@ -125,6 +125,7 @@ PublishingService.publish('./place.rbxl').then(()) => {
 - [Documentation](https://github.com/DevAX1T/rbxcloud/wiki)
 - [npm](https://www.npmjs.com/package/rbxcloud)
 - [GitHub](https://github.com/DevAX1T/rbxcloud)
+- [DevForum](https://devforum.roblox.com/t/-/1923073)
 
 ## Contributing
 Create an issue for any suggestions or bug reports that you find. Please ensure that you've read the [documentation](https://github.com/DevAX1T/rbxcloud/wiki), and if you're creating an issue, verify that it isn't a duplicate.
