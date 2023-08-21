@@ -8,6 +8,10 @@ const OpenCloud = {
         for (let key in config) {
             global.__OpenCloud[key] = config[key];
         }
+        if (config.Global) {
+            config.DataStoreService = config.Global
+            config.MessagingService = config.Global
+        }
     }
 }
 
