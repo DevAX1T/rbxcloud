@@ -1,12 +1,18 @@
-require('dotenv').config();
 const { DataStoreService, MessagingService, OpenCloud } = require('rbxcloud');
+require('dotenv').config();
+
+// Set different keys for different services
 OpenCloud.Configure({
-    DataStoreService: process.env.Cloud_DataStoreService, // Unless set DataStoreService.RegisterAPIKey('API-KEY'), all DataStoreService calls will use this key by default
-    MessagingService: process.env.Cloud_MessagingService, // Unless set MessagingService.RegisterAPIKey('API-KEY'), all MessagingService calls will use this key by default
+    DataStoreService: process.env.Cloud_DataStoreService,
+    MessagingService: process.env.Cloud_MessagingService,
     UniverseID: 3264572693 //UniverseId
 });
 
-
+// Or set the same key
+OpenCloud.Configure({
+    Global: process.env.GlobalOpenCloudAPIKey,
+    UniverseID: 3264572693 // Universe ID
+})
 
 //game:GetService('MessagingService'):PublishAsync('CSCMessage', 'hi! i am a message')
 
